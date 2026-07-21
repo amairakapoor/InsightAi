@@ -25,15 +25,15 @@ from pydantic import BaseModel, Field
 from sqlalchemy import inspect
 from sqlalchemy.orm import Session
 
-import charts
-import llm
-import report_export
-import sql_generator
-import sql_validator
-import upload_handler
-from config import settings
-from database import engine, get_db, run_raw_query
-from models import QueryHistory
+from . import charts
+from . import llm
+from . import report_export
+from . import sql_generator
+from . import sql_validator
+from . import upload_handler
+from .config import settings
+from .database import engine, get_db, run_raw_query
+from .models import QueryHistory
 
 router = APIRouter()
 

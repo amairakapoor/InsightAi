@@ -9,7 +9,7 @@ load_dotenv()
 
 class Settings:
     # --- Database ---
-    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///../database/sales.db")
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./sales.db")
 
     # --- LLM (Gemini) ---
     GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
@@ -17,6 +17,12 @@ class Settings:
     # If no API key is set, the app automatically falls back to a rule-based
     # NL->SQL engine so the whole project still runs end-to-end for demos.
     USE_LLM: bool = bool(GEMINI_API_KEY)
+
+    # --- CORS ---
+    ALLOWED_ORIGINS: list[str] = os.getenv(
+    "ALLOWED_ORIGINS",
+    "http://localhost:8501"
+    ).split(",")
 
     # --- App ---
     APP_NAME: str = "InsightAI"

@@ -5,7 +5,7 @@ DATABASE_URL in .env to a Postgres URL for production.
 """
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker, declarative_base
-from config import settings
+from .config import settings
 
 connect_args = {"check_same_thread": False} if "sqlite" in settings.DATABASE_URL else {}
 

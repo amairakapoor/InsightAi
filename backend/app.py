@@ -9,10 +9,10 @@ backend can also be run locally with:
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from database import Base, engine
-from routes import router
-from config import settings
-import models  # noqa: F401  (ensures models are registered with Base)
+from .database import Base, engine
+from .routes import router
+from .config import settings
+from . import models  # noqa: F401  (ensures models are registered with Base)
 
 # NOTE: on a hosted Postgres DB, this runs once per cold start and is a
 # cheap no-op if tables already exist (CREATE TABLE IF NOT EXISTS semantics).

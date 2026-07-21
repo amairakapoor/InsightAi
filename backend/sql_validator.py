@@ -9,7 +9,7 @@ Strategy (defense in depth):
 4. Enforce a row limit by appending LIMIT if the query doesn't have one.
 """
 import sqlparse
-from config import settings
+from .config import settings
 
 
 class UnsafeSQLError(Exception):

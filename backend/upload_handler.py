@@ -25,8 +25,8 @@ from fastapi import UploadFile
 from sqlalchemy import inspect
 from sqlalchemy.orm import Session
 
-from database import engine, run_raw_query
-from models import UploadedDataset
+from .database import engine, run_raw_query
+from .models import UploadedDataset
 
 ALLOWED_EXTENSIONS = {".csv", ".xlsx", ".xls"}
 MAX_FILE_SIZE_BYTES = 25 * 1024 * 1024  # 25 MB -- generous for a demo, safe for serverless

@@ -34,7 +34,7 @@ from reportlab.platypus import (
     TableStyle,
 )
 
-from config import settings
+from .config import settings
 
 MAX_TABLE_ROWS_IN_PDF = 100  # keeps the PDF readable; full data is in the CSV export
 PAGE_WIDTH, PAGE_HEIGHT = letter

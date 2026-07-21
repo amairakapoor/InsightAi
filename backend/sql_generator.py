@@ -11,9 +11,9 @@ Two paths:
 """
 import re
 from pathlib import Path
-import llm
-from config import settings
-from database import get_schema_description
+from . import llm
+from .config import settings
+from .database import get_schema_description
 
 PROMPT_TEMPLATE = Path(__file__).parent.parent / "prompts" / "sql_prompt.txt"
 if not PROMPT_TEMPLATE.exists():

@@ -6,7 +6,7 @@ sql_generator.py / insights.py automatically use their rule-based fallback
 paths, so the whole app still runs for demos/grading without any paid key.
 """
 import json
-from config import settings
+from .config import settings
 
 _client = None
 if settings.USE_LLM:
